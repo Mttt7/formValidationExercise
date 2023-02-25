@@ -1,0 +1,136 @@
+$color1:rgb(178, 0, 237);
+$color2:rgb(236, 244, 249);
+$color3:rgb(215,215,215);
+
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+    background: rgb(221,61,217);
+    background: linear-gradient(27deg, rgba(221,61,217,0.99) 2%, rgba(42,138,202,1) 87%);
+}
+
+.form-wrapper{
+    width: 300px;
+    height: 550px;
+    background-color: $color2;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        margin: 9px;
+        margin-bottom: 0;
+    }
+    
+    .error{
+        
+        height: 75px;
+        font-size: 15px;
+        margin-top: 10px;
+        color: rgba(255, 68, 11, 0.827);
+    }
+
+
+}
+form{
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 25px;
+
+
+    div{
+        position: relative;
+        
+
+        input{
+            background-color: $color2;
+            width: 100%;
+            padding: 0 5px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid $color3;
+            padding: 0 0;
+        }
+
+        
+        // input:focus ~ label,
+        // input:valid ~ label{
+        //     top:-5px;
+        //     color: $color1;
+            
+        // }
+
+        // input:focus ~ span::before,
+        // input:valid ~ span::before{
+        //     width: 100%;
+        //     transition: .5s;
+        // }
+
+
+        label{
+            top:-5px;
+            color: $color1;
+            
+        }
+
+        span::before{
+            width: 100%;
+            transition: .5s;
+        }
+
+        label{
+            position: absolute;
+            //top:50%;
+            left: 5px;
+            transform: translateY(-50%);
+            font-size: 16px;
+            pointer-events: none;
+            transition: .4s;
+        }
+
+        span::before{
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color:  $color1;;
+        }
+    }
+
+    button{
+        border: none;
+        text-decoration: none;
+        background-color: $color1;
+        border-radius: 8px;
+        padding: 10px 20px;
+        width: 100%;
+        color: white;
+        font-weight: 900;
+        font-size: 1rem;
+        cursor: pointer;
+    }
+
+    button:hover{
+        transition: .3s;
+        transform: scale(1.06);
+    }
+}
